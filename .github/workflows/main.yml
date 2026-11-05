@@ -4,7 +4,7 @@ on:
   push:
     branches: ["main"]
 
-permission:
+permissions:
     contents: read 
 
 
@@ -12,14 +12,15 @@ jobs:
   validar:
     runs-on: ubuntu-lastest
     steps:
-      - name: preparar repositorio
+      - name: "preparar repositorio"
         uses: actions/checkout@v4
+
       - name: "PASO 1 estructura de carpetas"
-        uses: |
+        run: |
           test -d app
           test -f app/index.php
           test -f Dockerfile
           test -f docker-compose.yml
          
       - name: "construccion"
-        uses: docker compose build
+        run: docker compose build
