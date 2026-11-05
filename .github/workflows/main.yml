@@ -1,0 +1,9 @@
+name: Validar y eliminar deploy
+
+on:
+  push:
+    branches: ["main"]
+permission:
+    contents: read 
+
+json:   
