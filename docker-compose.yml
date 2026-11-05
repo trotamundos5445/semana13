@@ -7,7 +7,6 @@ services:
     networks:
       - cloud_app_net
       - cloud_db_net
-    depends_on:
   
   bd:
     image: mariadb:11.4
@@ -22,6 +21,6 @@ services:
 
 networks:
   cloud_app_net:
-    drive: bridge
+    driver: bridge
   cloud_db_net:
-    drive: brigde
+    driver: bridge
